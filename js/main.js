@@ -2,7 +2,11 @@
 	"use strict";
 	
 	var introSlider = $('.ba-intro-slider'),
-		bgSlider = $('.ba-bg-slider');
+		bgSlider = $('.ba-bg-slider'),
+		largeSlider = $('.ba-large-slider'),
+		middleSlider = $('.ba-mid-slider'),
+		smallSlider = $('.ba-small-slider');
+
 
 		introSlider.slick({
 			prevArrow: '.ba-intro-slider-prev',
@@ -19,6 +23,31 @@
 			speed: 500,
 			fade: true
 		});
+		largeSlider.slick({
+			prevArrow: '.ba-triple-slider-prev',
+			nextArrow: '.ba-triple-slider-next',
+			asNavFor: '.ba-mid-slider, .ba-small-slider',
+			dots: true,
+			infinity:true,
+			speed: 500,
+			
+			
+		});
+		middleSlider.slick({
+			arrows: false,
+			asNavFor:'.ba-large-slider, .ba-small-slider',
+			infinity:true,
+			speed: 500,
+			
+		});
+		smallSlider.slick({
+			arrows: false,
+			asNavFor:'.ba-mid-slider, .ba-small-slider',
+			infinity:true,
+			speed: 500,
+			
+		});
+
 		// toggle mob menu 
 		var nav = $('.ba-nav') ,
 		menuToggle = $('.ba-menu-toggle') ;

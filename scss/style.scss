@@ -379,7 +379,10 @@ select {
 		height: 90px;
 		background: #fff;
 		border:none;
-		border-radius:0;
+        border-radius:0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 		
 	}
     @media screen and (min-width: $bp-medium) {
@@ -444,6 +447,226 @@ select {
         width: 25%;
     }
 }   
+
+/// TRIPLE SLIDER 
+
+    .ba-triple-slider {
+        padding:0 0 50px;
+        @media screen and (min-width: $bp-medium) {
+            padding:109px 0 450px;
+        }
+    } 
+
+.ba-triple-slider-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    flex-direction: column;
+    @media screen and (min-width: $bp-large) {
+        
+        flex-direction: row;
+        align-items: flex-start;
+
+    }
+    .slick-dots{
+        position: absolute;
+        bottom: 40%;
+        margin: 0 0 10px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        left: -180px;
+      
+        // @media screen and (min-width: $bp-medium) {
+        //     justify-content: flex-start;            
+        //     margin: 0 0 90px;            
+        //     left: -30px;
+        //     bottom: 100%;
+        // }        
+        li + li{
+            margin-left: 11px;
+        }
+        button{
+            display: block;
+            width: 9px;
+            height: 9px;
+            border: 2px solid #fff;
+            background: none;
+            font-size: 0;
+            padding: 0;
+            &:hover, &:focus{
+                outline: none;
+                background: $bg-color;
+            }
+        }
+        .slick-active{
+            button{
+                background: $bg-color;
+            }
+        }
+    }
+}
+.ba-slider-arrows {
+    margin: 0;
+    position: relative;
+    padding: 20px;
+  
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    display: none;
+    @media screen and (min-width: $bp-small) {
+        display:flex;
+    }
+    @media screen and (min-width: $bp-xlarge) {
+        margin-left: 60px;
+        margin-right: 140px;
+    }
+    button {
+        width: 120px;
+        height: 90px;
+        background: #fff;
+        border:none;
+        border-radius:0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.ba-large-slider { 
+    width: 100%;
+    @media screen and (min-width: $bp-medium) {
+        box-shadow:-300px 0 0 -50px $primary-color;
+        max-width: 620px; 
+    }
+    .slick-track {
+        display: flex;
+    }
+    &__item {
+        position: relative;
+        display: flex !important;
+        height: auto;
+        background-position: 50% ;
+        background-size: cover;
+        
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: 900;
+        color:$bg-color;
+        position: absolute;
+        top: 30%;
+        left:40%;
+        max-width: 210px;
+        z-index: 3;
+       
+        @media screen and (min-width: $bp-small) {
+            top: 50%;
+            left:50%;
+            max-width: 310px;
+        }
+        @media screen and (min-width: $bp-large) {
+            top: 70px;
+            left:70%;
+        }
+        span {
+            font-size: 50px;
+            color:$primary-color;
+            text-transform: uppercase;
+            @media screen and (min-width: $bp-small) {
+                font-size: 70px;
+            }
+            @media screen and (min-width: $bp-large) {
+                font-size: 90px;
+            }
+        }
+        &--bottom {
+            color:$text-color;
+            top: 30%;
+            left:20%;
+            opacity: 0;
+            text-transform: lowercase;
+            @media screen and (min-width: $bp-medium) {
+                opacity: 1;
+                top: 130%;
+                left:20%;
+                max-width: 424px;
+            & span {
+                text-transform: lowercase;
+            }
+        }
+    }
+}
+    & img {
+        width: 100%;
+        display: block;
+    }
+}
+.ba-mid-slider {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    max-width: 48%;
+   opacity: 0;
+    @media screen and (min-width: $bp-medium) {
+        opacity: 1;  
+        top: 80%;
+        left: 15%;
+        max-width: 340px;
+    }
+    @media screen and (min-width: $bp-xlarge) {
+        left: 25%;
+    }
+    .slick-track {
+        display: flex;
+    }
+    &__item {
+        position: relative;
+        display: flex !important;
+        height: auto;
+        background-position: 50% ;
+        background-size: cover;
+        
+    }
+    & img {
+        width: 100%;
+        display: block;
+    }
+}
+.ba-small-slider {
+    position: absolute;
+    top: 80%;
+    right:0;
+    max-width: 48%;
+    opacity: 0;
+    @media screen and (min-width: $bp-medium) {
+        opacity: 1;
+        top: 75%;
+        right: 7%;
+        max-width: 296px;
+    }
+    @media screen and (min-width: $bp-large) {
+        left: 60%;
+    }
+    .slick-track {
+        display: flex;
+    }
+    &__item {
+        position: relative;
+        display: flex !important;
+        height: auto;
+        background-position: 50% ;
+        background-size: cover;
+        
+    }
+    & img {
+        width: 100%;
+        display: block;
+    }
+}
+
 
 // VIDEO SECTION 
 .ba-section-videos {
@@ -527,14 +750,16 @@ main {
 }
 ///// Children 
 .ba-children {
-    background: url('../img/bgkid.jpg') no-repeat 200% ;
+   
    display: flex;
-   justify-content: flex-end;
+  justify-content: center;
 
 
    @media screen and (min-width: $bp-medium){
+    background: url('../img/bgkid.jpg') no-repeat 200% ;
        background-position: 0; 
        padding-top: 110px;
+       justify-content: flex-end;
    }
     &__article {
       max-width: 460px;
@@ -549,7 +774,13 @@ main {
         top: 60%;
         left: 0;
         z-index: 2;
+        opacity: 0;
+        @media screen and (min-width: $bp-small){
+            opacity: 1;
+        }
       }
+     
+
     }
     &__title {
         text-transform: uppercase;
@@ -572,12 +803,12 @@ main {
 }
 ////MAP 
 .ba-almost-map {
-    padding:177px 0 200px;
+    padding:30px 0 200px;
   
     position: relative;
     z-index: 2;
     @media screen and (min-width:$bp-medium){
-      
+        padding-top: 177px;
         padding-bottom: 600px;
     }
     &:after {
@@ -662,7 +893,9 @@ main {
 
 
 
-
+.ba-hide {
+    display:none;
+}
 
 
 
